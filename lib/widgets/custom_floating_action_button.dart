@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/add_note_buttom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
@@ -13,7 +13,14 @@ class CustomFloatingActionButton extends StatelessWidget {
       backgroundColor: Colors.cyan,
       onPressed: () {},
       child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const AddNoteButtonSheet();
+              },
+            );
+          },
           icon: const Icon(
             Icons.add,
             color: Colors.black,
